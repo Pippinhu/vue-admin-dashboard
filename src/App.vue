@@ -6,11 +6,8 @@
 
 <style lang="scss">
 
-@import"@/global-styles/color.scss";
-@import "@/global-styles/typography.scss";
-
 body{
-  background:$dark-blue;
+  background:red;
   }
 
 h1 {
@@ -27,7 +24,7 @@ p {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $white;
-  background-color:$dark-blue
+  background-color:red
 }
 #nav {
   padding: 30px;
@@ -41,3 +38,16 @@ p {
   }
 }
 </style>
+
+<script>
+
+import "animate.css";
+
+export default {
+  name: "App",
+  mounted() {
+    const isDarkMode = this.$store.getters.isDarkMode;
+    document.body.style.background = isDarkMode ? "#212c4f" : "#f0f3f5";
+  }
+};
+</script>
